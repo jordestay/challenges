@@ -6,11 +6,17 @@ arr = [10, 7, 76, 415]
 # look at the first integer of each
 # if larger, insert and compare next
 # if same, compare next two items in each integer
-# if ints aren't the same size, compare the string? This needs more thinking
+# if ints aren't the same size, compare the larger int? This needs more thinking
+
+def get_digit(x, i):
+    return int(str(x)[i])
 
 def order(arr):
-    if arr[0] >= arr[1]:
+    if get_digit(arr[0], 0) < get_digit(arr[1], 0):
         arr.append(arr.pop(0))
+    # elif get_digit(arr[0], 0) == get_digit(arr[1], 0):
+
+        
 
 # base case
 if len(arr) <= 1:
@@ -21,6 +27,7 @@ order(arr)
 # print solution
 for i in arr:
     print(i, end="", flush=True)
+print()
 
 
 
